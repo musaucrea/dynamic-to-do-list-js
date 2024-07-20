@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for pressing "Enter" in the input field
     taskInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            addTask(taskInput.value);
+            const taskText = taskInput.value.trim();
+            addTask(taskText);
             event.preventDefault(); // Prevent form submission
         }
     });

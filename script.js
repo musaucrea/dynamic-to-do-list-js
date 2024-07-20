@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create new task item
         const listItem = document.createElement('li');
         listItem.textContent = taskText;
+        listItem.classList.add('task-item');
         
         // Create remove button
         const removeButton = document.createElement('button');
@@ -57,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for the "Add Task" button
     addButton.addEventListener('click', function() {
-        addTask(taskInput.value);
+        const taskText = taskInput.value.trim();
+        addTask(taskText);
     });
 
     // Event listener for pressing "Enter" in the input field
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Prevent form submission
         }
     });
+    
 
     // Load existing tasks on page load
     loadTasks();
